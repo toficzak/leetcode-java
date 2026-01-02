@@ -26,4 +26,13 @@ public class P347Test {
         Arrays.sort(expected);
         Assertions.assertArrayEquals(expected, result);
     }
+
+    @ParameterizedTest
+    @MethodSource("testcases")
+    void priorityQueueTest(int[] nums, int k, int[] expected) {
+        var result = new P347().topKFrequentByPriorityQueue(nums, k);
+        Arrays.sort(result);
+        Arrays.sort(expected);
+        Assertions.assertArrayEquals(expected, result);
+    }
 }
