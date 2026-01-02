@@ -35,4 +35,13 @@ public class P347Test {
         Arrays.sort(expected);
         Assertions.assertArrayEquals(expected, result);
     }
+
+    @ParameterizedTest
+    @MethodSource("testcases")
+    void bucketSortTest(int[] nums, int k, int[] expected) {
+        var result = new P347().topKFrequentByBucketSort(nums, k);
+        Arrays.sort(result);
+        Arrays.sort(expected);
+        Assertions.assertArrayEquals(expected, result);
+    }
 }
